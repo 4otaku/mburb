@@ -7,7 +7,7 @@ class Module_Admin extends Module_Abstract_Authorized
 
 	protected function get_data() {
 		return array(
-			'strips' => Database::order('order')->get_full_table('strip')
+			'strips' => Database::order('order', 'asc')->get_full_table('strip')
 		);
 	}
 }
