@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include "admin_menu.html" %}
+<div class="add_form">
+	<span class="white">Номер:</span> <input type="text" name="order" />
+	<hr />
+	<span class="white">Заголовок:</span> <input type="text" name="title" size="60" />
+	<hr />
+	<span class="white">Вставки:</span> <button class="add_picture">Добавить вставку</button>
+	<div class="pictures"></div>
+	<hr />
+	<button class="bb" rel="[color=][/color]">color</button>
+	<button class="bb" rel="[size=][/size]">size</button>
+	<button class="bb" rel="[spoiler=][/spoiler]">spoiler</button>
+	<button class="bb" rel="[img=][/img]">img</button>
+	<button class="bb" rel="[url=][/url]">url</button>
+	<br />
+	<textarea name="text"></textarea>
+	<hr />
+	<div class="center">
+		<button class="ready">Создать</button>
+	</div>
+</div>
+<div class="picture_template">
+	<select name="picture[]">
+		{% for key, file in files %}
+			<option value="{{key}}">{{file.filename}}</option>
+		{% endfor %}
+	</select>
+	<img src="/images/delete.png" />
+</div>
+{% endblock %}

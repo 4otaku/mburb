@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include "admin_menu.html" %}
+<div id="upload">
+	<button>
+		Загрузить
+		<img class="processing-image" src="/images/loading.gif" />
+	</button>
+</div>
+<hr />
+{% for key, file in files %}
+	<div class="file">
+		<a href="/files/{{file.md5}}.{{file.ext}}" target="_blank" class="white">{{file.filename}}</a>
+		<img src="/images/delete.png" rel={{key}} />
+	</div>
+{% endfor %}
+{% endblock %}

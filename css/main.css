@@ -1,0 +1,52 @@
+.wrapper {
+	background-color: grey;
+	padding: 30px 200px;
+}
+
+.strip {
+	width: 640px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.strip td {
+	background-color: #EEEEEE;
+}
+
+.strip tr:last-child td {
+	background-color: #EEEEEE;
+	padding-bottom: 15px;
+}
+
+.title {
+	font-weight: bold;
+	font-family: courier, monospace;
+	color: #000000;
+	font-size: 32px;
+	padding: 0 25px;
+}
+
+.text {
+	font-weight: bold;
+	font-family: courier, monospace;
+	color: #000000;
+	font-size: 15px;
+	line-height: 130%;
+	padding: 0 25px;
+}
+
+.next {
+	font-size: 24px;
+	text-align: left;
+	padding: 0 25px;
+}
+
+.spoiler {
+	border: 1px dashed gray;
+}
+
+.spoiler_text {
+	margin-top: 10px;
+	text-align: left;
+	padding: 0 15px;
+}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include "admin_menu.html" %}
+{% if error %}
+	{% include "error_text.html" %}
+{% else %}
+	<div class="add_form">
+		<input type="hidden" name="id" value="{{strip.id}}" />
+		<span class="white">Номер:</span> <input type="text" name="order" value="{{strip.order}}" />
+		<hr />
+		<span class="white">Заголовок:</span> <input type="text" name="title" size="60" value="{{strip.title}}" />
+		<hr />
+		<span class="white">Вставки:</span> <button class="add_picture">Добавить вставку</button>
+		<div class="pictures">
+			{% for image in images %}
+				<div>
+					<select name="picture[]">
+						{% for key, file in files %}
+							<option value="{{key}}" {% if key == image.id %}selected="selected"{% endif %}>{{file.filename}}</option>
+						{% endfor %}
+					</select>
+					<img src="/images/delete.png" />
+				</div>
+			{% endfor %}
+		</div>
+		<hr />
+		<button class="bb" rel="[color=][/color]">color</button>
+		<button class="bb" rel="[size=][/size]">size</button>
+		<button class="bb" rel="[spoiler=][/spoiler]">spoiler</button>
+		<button class="bb" rel="[img=][/img]">img</button>
+		<button class="bb" rel="[url=][/url]">url</button>
+		<br />
+		<textarea name="text">{{strip.text}}</textarea>
+		<hr />
+		<div class="center">
+			<button class="edit">Редактировать</button>
+		</div>
+	</div>
+	<div class="picture_template">
+		<select name="picture[]">
+			{% for key, file in files %}
+				<option value="{{key}}">{{file.filename}}</option>
+			{% endfor %}
+		</select>
+		<img src="/images/delete.png" />
+	</div>
+{% endif %}
+{% endblock %}

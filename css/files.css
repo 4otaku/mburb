@@ -1,0 +1,14 @@
+.processing-image {
+	visibility: hidden;
+}
+
+div.file {
+	margin: 10px;
+	width: 800px;
+	border-bottom: 1px solid #333;
+}
+
+div.file img {
+	float: right;
+	cursor: pointer;
+}

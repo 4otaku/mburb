@@ -1,0 +1,8 @@
+config/*
+!config/*sample*
+
+cache/*
+!cache/tmp/index.php
+
+files/*
+!files/index.php

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include "admin_menu.html" %}
+{% for strip in strips %}
+	<div class="strip">
+		<span class="white">({{strip.order}})</span>
+		<a href="/view/{{strip.id}}" target="_blank" class="white view"> {{strip.title}}</a>
+		<img src="/images/delete.png" rel={{strip.id}} />
+		<a href="/edit/{{strip.id}}" target="_blank" class="white edit">редактировать</a>
+	</div>
+{% endfor %}
+{% endblock %}

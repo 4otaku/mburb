@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include "admin_menu.html" %}
+{% if error %}
+	{% include "error_text.html" %}
+{% else %}
+	<div class="center wrapper">
+		<table class="strip" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="title">
+					{{strip.title}}
+				</td>
+			</tr>
+			{% for image in images %}
+				<tr>
+					<td class="picture">
+						<img src="/files/{{image.md5}}.{{image.ext}}" />
+					</td>
+				</tr>
+			{% endfor %}
+			<tr>
+				<td class="text">
+					{{strip.text}}
+				</td>
+			</tr>
+			{% if next %}
+				<tr>
+					<td class="next">
+						&gt; <a href="/view/{{next.id}}">{{next.title}}</a>
+					</td>
+				</tr>
+			{% endif %}
+		</table>
+</div>
+{% endif %}
+{% endblock %}
