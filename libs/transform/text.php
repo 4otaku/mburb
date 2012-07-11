@@ -3,9 +3,9 @@
 class Transform_Text
 {
 	protected static $names = array(
-		'fF' => 'FF00FF',
-		'dE' => '000000',
-		'sB' => '004875',
+		'fF' => '000000',
+		'dE' => '870300',
+		'pA' => '004875',
 	);
 
 	public static function format($string) {
