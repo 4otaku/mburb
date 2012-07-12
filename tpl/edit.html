@@ -5,6 +5,7 @@
 {% if error %}
 	{% include "error_text.html" %}
 {% else %}
+	<a href="/view/{{strip.id}}" class="white">Смотреть.</a>
 	<div class="add_form">
 		<input type="hidden" name="id" value="{{strip.id}}" />
 		<span class="white">Номер:</span> <input type="text" name="order" value="{{strip.order}}" />
