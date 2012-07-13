@@ -2,6 +2,10 @@ body {
 	background-color: #5a5a5a;
 }
 
+html {
+	overflow-y: scroll;
+}
+
 .clear {
 	clear: both;
 }
@@ -28,8 +32,4 @@ body {
 
 .disabled {
 	opacity: 0.5;
-}
-
-html {
-	overflow-y: scroll;
 }
