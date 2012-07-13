@@ -3,7 +3,7 @@
 	font-size: 12px;
 	font-weight: bold;
 	float: left;
-	width: 350px;
+	width: 300px;
 	padding: 15px;
 	background-color: grey;
 	line-height: 120%;
@@ -23,13 +23,13 @@
 
 .basic_wrapper {
 	background-color: grey;
-	padding: 30px;
+	padding: 30px 10px;
 }
 
 .wrapper {
 	background-color: grey;
-	padding: 30px;
-	margin-left: 450px;
+	padding: 30px 10px;
+	margin-left: 350px;
 }
 
 .strip {
