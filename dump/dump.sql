@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS `strip` (
   `order` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+ALTER TABLE  `strip` ADD  `date` DATE NULL;
 
 -- --------------------------------------------------------
 
