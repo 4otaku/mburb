@@ -2,8 +2,8 @@
 
 {% block content %}
 {% include "user_menu.html" %}
-<div class="basic_wrapper center">
-	<div class="logs_title">Последние страницы:</div>
+<div class="basic_wrapper">
+	<div class="logs_title">Все страницы комикса:</div>
 	{% for id, log in logs %}
 		{{log.date}} - <a href="/page/{{id}}">"{{log.title}}"</a><br />
 	{% endfor %}
