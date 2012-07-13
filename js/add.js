@@ -23,4 +23,7 @@ $(document).ready(function(){
 			}
 		});
 	});
+	$('.today').click(function(){
+		$('.date').val($(this).attr('rel'));
+	});
 });

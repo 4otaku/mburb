@@ -4,6 +4,13 @@
 {% if error %}
 	{% include "error_text.html" %}
 {% else %}
+	<div class="logs">
+		<div class="logs_title">Последние страницы:</div>
+		{% for id, log in logs %}
+			{{log.date}} - <a href="/page/{{id}}">"{{log.title}}"</a><br />
+		{% endfor %}
+		<div class="clear"></div>
+	</div>
 	<div class="center wrapper">
 		<table class="strip" cellspacing="0" cellpadding="0">
 			<tr>

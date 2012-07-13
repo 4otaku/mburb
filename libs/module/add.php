@@ -7,7 +7,8 @@ class Module_Add extends Module_Abstract_Authorized
 
 	protected function get_data() {
 		return array(
-			'files' => Database::order('time')->get_full_vector('file')
+			'files' => Database::order('time')->get_full_vector('file'),
+			'date' => date('y / m / d')
 		);
 	}
 }

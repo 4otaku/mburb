@@ -124,14 +124,21 @@ class Module_Ajax extends Module_Abstract
 
 		$title = $get['title'];
 		$text = empty($get['text']) ? '' : $get['text'];
+		$date = empty($get['date']) ? '' : $get['date'];
 		$pictures = empty($get['picture']) ? array() : (array) $get['picture'];
 		$order = empty($get['order']) ? 0 : (int) $get['order'];
 
-		Database::insert('strip', array(
+		$insert = array(
 			'text' => $text,
 			'title' => $title,
 			'order' => $order
-		));
+		);
+
+		if (preg_match('/^\s*(\d{2})\s*\/\s*(\d{2})\s*\/\s*(\d{2})\s*$/ui', $date, $date_parts)) {
+			$insert['date'] = '20' . $date_parts[1] . '-' . $date_parts[2] . '-'  . $date_parts[3];
+		}
+
+		Database::insert('strip', $insert);
 		$id = Database::last_id();
 		foreach ($pictures as $key => $picture) {
 			Database::insert('strip_file', array(
@@ -161,14 +168,21 @@ class Module_Ajax extends Module_Abstract
 		$id = $get['id'];
 		$title = $get['title'];
 		$text = empty($get['text']) ? '' : $get['text'];
+		$date = empty($get['date']) ? '' : $get['date'];
 		$pictures = empty($get['picture']) ? array() : (array) $get['picture'];
 		$order = empty($get['order']) ? 0 : (int) $get['order'];
 
-		Database::update('strip', array(
+		$update = array(
 			'text' => $text,
 			'title' => $title,
 			'order' => $order
-		), $id);
+		);
+
+		if (preg_match('/^\s*(\d{2})\s*\/\s*(\d{2})\s*\/\s*(\d{2})\s*$/ui', $date, $date_parts)) {
+			$update['date'] = '20' . $date_parts[1] . '-' . $date_parts[2] . '-'  . $date_parts[3];
+		}
+
+		Database::update('strip', $update, $id);
 		Database::delete('strip_file', 'id_strip = ?', $id);
 		foreach ($pictures as $key => $picture) {
 			Database::insert('strip_file', array(
