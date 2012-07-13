@@ -1,1 +1,62 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
+
+{% block content %}
+{% if error %}
+	{% include "error_text.html" %}
+{% else %}
+	<div class="logs">
+		<div class="logs_title">Последние страницы:</div>
+		{% for id, log in logs %}
+			{{log.date}} - <a href="/page/{{id}}">"{{log.title}}"</a><br />
+		{% endfor %}
+		<div class="clear"></div>
+	</div>
+	<div class="center wrapper">
+		<table class="strip" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="title">
+					{{strip.title}}
+				</td>
+			</tr>
+			{% for image in images %}
+				<tr>
+					<td class="picture">
+						<img src="/files/{{image.md5}}.{{image.ext}}" />
+					</td>
+				</tr>
+			{% endfor %}
+			<tr>
+				<td class="text">
+					{{strip.text}}
+				</td>
+			</tr>
+			{% if next %}
+				<tr>
+					<td class="next">
+						&gt; <a href="/page/{{next.id}}">{{next.title}}</a>
+					</td>
+				</tr>
+			{% endif %}
+			<tr>
+				<td class="controls">
+					<span class="right">
+						<a href="#" class="save" rel="{{page}}">Сохранить</a>
+						<a href="#" class="auto-save">
+							{% if autosave %}
+								Выкл. автосохранение</a>
+							{% else %}
+								Вкл. автосохранение</a>
+							{% endif %}
+						<a href="#" class="load">Загрузить</a>
+						<a href="#" class="delete">Очистить данные</a>
+					</span>
+					<span class="left">
+						<a href="/">С начала</a>
+						<a href="/page/{{back}}">Назад</a>
+					</span>
+				</td>
+			</tr>
+		</table>
+	</div>
+{% endif %}
+{% endblock %}
