@@ -1,9 +1,9 @@
 .logs {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: bold;
 	float: left;
-	width: 200px;
+	width: 350px;
 	padding: 15px;
 	background-color: grey;
 	line-height: 120%;
@@ -23,12 +23,14 @@
 
 .wrapper {
 	background-color: grey;
-	padding: 30px 200px;
-	margin-left: 300px;
+	padding: 30px;
+	margin-left: 450px;
 }
 
 .strip {
 	width: 640px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .strip td {
