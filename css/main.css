@@ -21,6 +21,11 @@
 	margin: 0 0 20px 0;
 }
 
+.basic_wrapper {
+	background-color: grey;
+	padding: 30px;
+}
+
 .wrapper {
 	background-color: grey;
 	padding: 30px;
