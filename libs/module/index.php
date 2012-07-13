@@ -21,7 +21,7 @@ class Module_Index extends Module_Abstract_Html
 
 		foreach ($logs as &$log) {
 			$log['date'] = strtotime($log['date']);
-			$log['date'] = $log['date'] > 0 ? date('y / m / d', $log['date']) : '';
+			$log['date'] = $log['date'] > 0 ? date('y/m/d', $log['date']) : '';
 		}
 
 		return array(
