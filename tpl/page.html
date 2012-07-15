@@ -6,16 +6,23 @@
 {% else %}
 	{% include "user_menu.html" %}
 	<div class="logs">
-		<div class="logs_title">Последние страницы:</div>
-		{% for id, log in logs %}
-			{{log.date}} - <a href="/page/{{id}}">"{{log.title}}"</a><br />
-		{% endfor %}
+		<div class="logs_links">
+			<div class="logs_title">Последние страницы:</div>
+			{% for id, log in logs %}
+				{{log.date}} - <a href="/page/{{id}}">"{{log.title}}"</a><br />
+			{% endfor %}
+			<br /><br />
+			<a href="/logs">Показать все</a>
+			<div class="clear"></div>
+		</div>
 		<br /><br />
-		<a href="/logs">Показать все</a>
-		<div class="clear"></div>
-		<img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" align="left">
-		Комикс LoopBreak публикуется по лицензии Creative Commons Attribution-NonCommercial
-		(<a href="http://creativecommons.org/licenses/by-nc/3.0/">CC BY-NC 3.0 Unported</a>).
+		<div class="logs_cc">
+			Комикс LoopBreak публикуется по лицензии Creative Commons Attribution-NonCommercial
+			(<a href="http://creativecommons.org/licenses/by-nc/3.0/">CC BY-NC 3.0 Unported</a>).
+			<div class="clear"></div>
+			<br />
+			<img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png" />
+		</div>
 	</div>
 	<div class="center wrapper">
 		<table class="strip" cellspacing="0" cellpadding="0">

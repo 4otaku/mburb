@@ -1,12 +1,21 @@
 .logs {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
 	float: left;
 	width: 300px;
+}
+
+.logs_links {
 	padding: 15px;
+	font-size: 12px;
+	font-weight: bold;
 	background-color: grey;
 	line-height: 120%;
+}
+
+.logs_cc {
+	padding: 15px;
+	font-size: 10px;
+	background-color: grey;
 }
 
 .logs a {
