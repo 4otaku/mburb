@@ -5,6 +5,6 @@ class Module_Index extends Module_Page
 	public function __construct($url) {
 		parent::__construct($url);
 
-		$this->id = 1;
+		$this->id = Database::order('order', 'asc')->get_field('strip', 'order', 'order > 0');
 	}
 }
