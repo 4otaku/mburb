@@ -27,7 +27,7 @@ class Module_View extends Module_Abstract_Authorized
 		return array(
 			'strip' => $strip,
 			'images' => Database::join('file', 'sf.id_file = f.id')->
-				order('sf.order', 'asc')->get_full_table('strip_file', 'id_strip = ?', $this->id),
+				order('sf.order', 'asc')->get_full_table('strip_file', 'id_strip = ?', $strip['id']),
 			'next' => $strip['order'] ?
 				Database::order('order', 'asc')->get_full_row('strip', '`order` > ?', $strip['order']) :
 				false

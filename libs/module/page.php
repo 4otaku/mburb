@@ -39,7 +39,7 @@ class Module_Page extends Module_Abstract_Html
 			'logs' => $logs,
 			'strip' => $strip,
 			'images' => Database::join('file', 'sf.id_file = f.id')->
-				order('sf.order', 'asc')->get_full_table('strip_file', 'id_strip = ?', $this->id),
+				order('sf.order', 'asc')->get_full_table('strip_file', 'id_strip = ?', $strip['id']),
 			'next' => Database::order('order', 'asc')->get_full_row('strip', '`order` > ?', $strip['order']),
 			'back' => Database::order('order')->get_field('strip', 'order', '`order` < ?', $strip['order']),
 			'autosave' => isset($_COOKIE['autosave']) ? (int) $_COOKIE['autosave'] : 0
