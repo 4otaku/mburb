@@ -9,7 +9,7 @@
 		<div class="logs_links">
 			<div class="logs_title">Последние страницы:</div>
 			{% for id, log in logs %}
-				{{log.date}} - <a href="/page/{{id}}">"{{log.title}}"</a><br />
+				{{log.date}} - <a href="/page/{{log.order}}">"{{log.title}}"</a><br />
 			{% endfor %}
 			<br /><br />
 			<a href="/logs">Показать все</a>

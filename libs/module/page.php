@@ -27,7 +27,7 @@ class Module_Page extends Module_Abstract_Html
 		$strip['text'] = Transform_Text::format($strip['text']);
 
 		$logs = Database::order('order')->limit(30)->get_vector(
-			'strip', array('id', 'title', 'date'), '`order` > 0');
+			'strip', array('id', 'order', 'title', 'date'), '`order` > 0');
 
 		foreach ($logs as &$log) {
 			$log['date'] = strtotime($log['date']);

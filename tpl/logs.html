@@ -5,7 +5,7 @@
 <div class="basic_wrapper">
 	<div class="logs_title">Все страницы комикса:</div>
 	{% for id, log in logs %}
-		{{log.date}} - <a href="/page/{{id}}">"{{log.title}}"</a><br />
+		{{log.date}} - <a href="/page/{{log.order}}">"{{log.title}}"</a><br />
 	{% endfor %}
 	<div class="clear"></div>
 </div>
