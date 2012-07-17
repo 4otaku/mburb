@@ -9,6 +9,7 @@ div.file {
 }
 
 div.file img {
+	margin-left: 15px;
 	float: right;
 	cursor: pointer;
 }

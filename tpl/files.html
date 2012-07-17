@@ -11,8 +11,11 @@
 <hr />
 {% for key, file in files %}
 	<div class="file">
-		<a href="/files/{{file.md5}}.{{file.ext}}" target="_blank" class="white">{{file.filename}}</a>
-		<img src="/images/delete.png" rel={{key}} />
+		<a href="/files/{{file.md5}}.{{file.ext}}" target="_blank" class="white link">{{file.filename}}</a>
+		<input type="text" class="input hidden" value="{{file.filename}}" />
+		<button class="save hidden" rel="{{key}}">Ок</button>
+		<img src="/images/delete.png" rel="{{key}}" class="delete" />
+		<img src="/images/edit.gif" class="edit" />
 	</div>
 {% endfor %}
 {% endblock %}

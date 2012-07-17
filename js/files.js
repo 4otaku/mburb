@@ -37,10 +37,19 @@ a = new qq.FileUploaderBasic({
 });
 
 $(document).ready(function(){
-	$('div.file img').click(function(){
-		var name = $(this).parent().children('a').html();
+	$('div.file .delete').click(function(){
+		var name = $(this).parent().children('a.link').html();
 		if (confirm('Вы действительно хотите удалить файл '+name+'?')) {
 			$.get('/ajax/delete_file', {id: $(this).attr('rel')}, document.location.reload());
 		}
+	});
+	$('div.file .edit').click(function(){
+		$(this).parent().children('a.link').toggle();
+		$(this).parent().children('input.input').toggle();
+		$(this).parent().children('button.save').toggle();
+	});
+	$('div.file .save').click(function(){
+		var name = $(this).parent().children('input.input').val();
+		$.get('/ajax/rename_file', {id: $(this).attr('rel'), name: name}, document.location.reload());
 	});
 });

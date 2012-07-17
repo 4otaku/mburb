@@ -97,6 +97,16 @@ class Module_Ajax extends Module_Abstract
 		return array('success' => true);
 	}
 
+	protected function do_rename_file ($get) {
+		if (!isset($get['id']) || !is_numeric($get['id']) || empty($get['name'])) {
+			return array('success' => false);
+		}
+
+		Database::update('file', array('filename' => $get['name']), $get['id']);
+
+		return array('success' => true);
+	}
+
 	protected function do_login ($get) {
 		$password = $this->encode_password($get['password']);
 		$login = preg_replace('/[^a-zа-яё_\s\d]/ui', '', $get['login']);
