@@ -3,16 +3,18 @@
 class Transform_Text
 {
 	protected static $names = array(
-		'fF' => '000000',
-		'dE' => '870300',
-		'pA' => '004875',
+		'[fF]' => '000000',
+		'Иштванна' => '000000',
+		'Папа' => '700580',
+		'[dE]' => '870300',
+		'[pA]' => '004875',
 	);
 
 	public static function format($string) {
 		$string = str_replace("\r","",$string);
 
 		foreach (self::$names as $name => $color) {
-			$string = preg_replace('/^\['.$name.'\]:.*$/mu', '[color=#'.$color.']$0[/color]', $string);
+			$string = preg_replace('/^'.$name.':.*$/mu', '[color=#'.$color.']$0[/color]', $string);
 		}
 
 		while (preg_match_all('/\[([a-zA-Z]*)=?([^\n]*?)\](.*?)\[\/\1\]\n?/is', $string, $matches)) {
