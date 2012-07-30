@@ -8,6 +8,7 @@ class Transform_Text
 		'Папа' => '700580',
 		'[dE]' => '870300',
 		'[pA]' => '004875',
+		'[DD]' => 'BFBFBF',
 	);
 
 	public static function format($string) {
