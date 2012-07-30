@@ -9,11 +9,11 @@ class Module_View extends Module_Abstract_Authorized
 	public function __construct($url) {
 		parent::__construct($url);
 
-		if (empty($url[2]) || !is_numeric($url[2])) {
+		if (empty($_GET['id']) || !is_numeric($_GET['id'])) {
 			$this->redirect_location = '/admin/';
 			$this->create_redirect();
 		} else {
-			$this->id = $url[2];
+			$this->id = (int) $_GET['id'];
 		}
 	}
 
