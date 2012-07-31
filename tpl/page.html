@@ -37,11 +37,11 @@
 						{% if image.ext != 'swf' %}
 							<img src="/files/{{image.md5}}.{{image.ext}}" />
 						{% else %}
-							<object width="650px" height="450px" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+							<object width="650px" height="auto">
 								<param name="wmode" value="transparent" />
 								<param name="movie" value="/files/{{image.md5}}.{{image.ext}}" />
 								<embed src="/files/{{image.md5}}.{{image.ext}}" quality="high"
-									width="650px" height="450px"
+									width="650px" height="auto"
 									name="{{image.md5}}.{{image.ext}}"
 									type="application/x-shockwave-flash" />
 							</object>
