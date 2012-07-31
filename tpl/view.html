@@ -21,7 +21,7 @@
 						{% if image.ext != 'swf' %}
 							<img src="/files/{{image.md5}}.{{image.ext}}" />
 						{% else %}
-							<object width="650">
+							<object width="650px">
 								<param name="wmode" value="transparent" />
 								<param name="movie" value="/files/{{image.md5}}.{{image.ext}}">
 								<embed src="/files/{{image.md5}}.{{image.ext}}" quality="high"
