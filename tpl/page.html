@@ -34,7 +34,16 @@
 			{% for image in images %}
 				<tr>
 					<td class="picture">
-						<img src="/files/{{image.md5}}.{{image.ext}}" />
+						{% if image.ext != 'swf' %}
+							<img src="/files/{{image.md5}}.{{image.ext}}" />
+						{% else %}
+							<object width="650">
+								<param name="wmode" value="transparent" />
+								<embed src="/files/{{image.md5}}.{{image.ext}}" quality="high"
+									width="650px" NAME="{{image.md5}}.{{image.ext}}"
+									type="application/x-shockwave-flash">
+							</object>
+						{% endif %}
 					</td>
 				</tr>
 			{% endfor %}
